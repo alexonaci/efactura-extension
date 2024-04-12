@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 ../../UBL-2.1(1)/xsd/maindoc/UBL-Invoice-2.1.xsd"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.0</cbc:CustomizationID>
+	<cbc:ID>TEST46</cbc:ID>
+	<cbc:IssueDate>2022-06-01</cbc:IssueDate>
+	<cbc:DueDate>2022-06-01</cbc:DueDate>
+	<cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+	
+	<cbc:DocumentCurrencyCode>RON</cbc:DocumentCurrencyCode>
+	<cbc:TaxCurrencyCode>RON</cbc:TaxCurrencyCode>
+		
+
+<!--BG-4 VANZATOR============================================================   -->
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+		<cbc:EndpointID schemeID="EM">aa@bbb.com</cbc:EndpointID> 
+		<cac:PartyIdentification><cbc:ID>111111</cbc:ID></cac:PartyIdentification> <!--BT-29  -->
+		<cac:PartyName><cbc:Name>EXEMPLU  13</cbc:Name></cac:PartyName> 
+		<cac:PostalAddress><cbc:StreetName>str.xxx nr.11 bl.b1est et.2 sc.sc ap.1</cbc:StreetName><cbc:CityName>STEFANESTI</cbc:CityName><cbc:PostalZone>12345</cbc:PostalZone><cbc:CountrySubentity>RO-PH</cbc:CountrySubentity>
+<cac:Country><cbc:IdentificationCode>RO</cbc:IdentificationCode></cac:Country></cac:PostalAddress>
+			<cac:PartyTaxScheme><cbc:CompanyID>RO111111</cbc:CompanyID>  <cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme></cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>EXEMPLU  13</cbc:RegistrationName>
+				<cbc:CompanyID>111111</cbc:CompanyID> <!--BT-30 -->
+				<cbc:CompanyLegalForm>, Capital social:200 ron</cbc:CompanyLegalForm>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+<!--BG-7 CUMPARATOR ================================================================== -->
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+		 
+			<cac:PartyIdentification><cbc:ID>11984882</cbc:ID></cac:PartyIdentification> <!--BT-46 --> 
+			<cac:PartyName>	<cbc:Name>B_B COLLECTION SRL</cbc:Name></cac:PartyName> 
+			<cac:PostalAddress><cbc:StreetName>Bucuresti</cbc:StreetName><cbc:CityName>23 AUGUST</cbc:CityName><cbc:CountrySubentity>RO-MH</cbc:CountrySubentity>
+<cac:Country><cbc:IdentificationCode>RO</cbc:IdentificationCode></cac:Country></cac:PostalAddress>
+			<cac:PartyTaxScheme><cbc:CompanyID>RO11984882</cbc:CompanyID> <cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme></cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>B_B COLLECTION SRL</cbc:RegistrationName>
+				<cbc:CompanyID>11984882</cbc:CompanyID> <!--BT-47 -->
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="RON">117.78</cbc:TaxAmount>
+
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="RON">619.90</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="RON">117.78</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID>S</cbc:ID>
+					<cbc:Percent>19.00</cbc:Percent>
+					<cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+	</cac:TaxTotal>
+
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="RON">619.90</cbc:LineExtensionAmount>	<!-- BT-106 contine deduceri -->
+			<cbc:TaxExclusiveAmount currencyID="RON">619.90</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="RON">737.68</cbc:TaxInclusiveAmount>	<!-- BT-109 fara deduceri -->
+		<cbc:AllowanceTotalAmount currencyID="RON">0</cbc:AllowanceTotalAmount>	<!--BT-107 deduceri incluse in preturile liniilor-->
+		<cbc:ChargeTotalAmount currencyID="RON">0</cbc:ChargeTotalAmount><!--BT-108 taxe incluse in pretul liniilor -->
+		<cbc:PrepaidAmount currencyID="RON">0</cbc:PrepaidAmount><!--BT-113 plati anticipate -->
+		<cbc:PayableRoundingAmount currencyID="RON">0</cbc:PayableRoundingAmount><!--BT-114 rotunjiri la total factura -->
+		<cbc:PayableAmount currencyID="RON">737.68</cbc:PayableAmount><!--BT-115 totalfct-plati anticipate-->
+	</cac:LegalMonetaryTotal>
+
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity  unitCode="H87" > 1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="RON">100.00</cbc:LineExtensionAmount>
+				
+		<cac:Item>
+			<!-- <cbc:Description>SERVICII</cbc:Description>BT-154-->
+			<cbc:Name>SERVICII</cbc:Name>
+					<!-- BT-158 -->
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>19</cbc:Percent>		<!-- BT-152 -->
+				<cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>	
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="RON">100.00</cbc:PriceAmount>
+			<cbc:BaseQuantity  unitCode="H87" >1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity  unitCode="H87" > 33.57</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="RON">414.42</cbc:LineExtensionAmount>
+				
+		<cac:Item>
+			<!-- <cbc:Description>AMIDON PORUMB</cbc:Description>BT-154-->
+			<cbc:Name>AMIDON PORUMB</cbc:Name>
+					<!-- BT-158 -->
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>19</cbc:Percent>		<!-- BT-152 -->
+				<cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>	
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="RON">12.35</cbc:PriceAmount>
+			<cbc:BaseQuantity  unitCode="H87" >1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:InvoicedQuantity  unitCode="13" > 3.12</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="RON">105.48</cbc:LineExtensionAmount>
+				
+		<cac:Item>
+			<!-- <cbc:Description>CAMASA PISTON</cbc:Description>BT-154-->
+			<cbc:Name>CAMASA PISTON</cbc:Name>
+					<!-- BT-158 -->
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>19</cbc:Percent>		<!-- BT-152 -->
+				<cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>	
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="RON">33.78</cbc:PriceAmount>
+			<cbc:BaseQuantity  unitCode="13" >1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+</Invoice>
